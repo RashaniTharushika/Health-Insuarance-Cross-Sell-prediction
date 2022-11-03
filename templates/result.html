@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+    <!-- header section starts  -->
+    <header class="header">
+        <a href="#" class="logo">Vehicle Insurance <span>Prediction</span> </a>
+        <nav class="navbar">
+            <div id="nav-close" class="fas fa-times"></div>
+            <a href="/">home</a>
+            <a href="/classification">Classification</a>
+            <!--<a href="page2.html">Visulization</a>-->
+        </nav>
+        <div class="icons">
+            <div id="menu-btn" class="fas fa-bars"></div>
+            <div id="search-btn"></div>
+        </div>
+    </header>
+    <!-- header section ends -->
+    <!-- search form  -->
+    <div class="search-form">
+        <div id="close-search"></div>
+    </div>
+    <!-- home section starts  -->
+    <section class="home" id="home">
+        <div class="swiper home-slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="box" style="background: url({{ url_for('static', filename='images/1.jpg') }}) no-repeat;">
+                        <div class="content">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </section>
+    <!--result-->
+    <div class="result">
+        {% if pred_value != '' %}
+        <p>Prediction : {{pred_value}}</p>
+        {% endif %}
+    </div>
+    <!-- footer section starts  -->
+    <section class="footer">
+        <div class="credit">created by <span>group 24</span> | all rights reserved!</div>
+    </section>
+    <!-- footer section ends -->
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <!-- custom js file link  -->
+    <script src="/js/script.js"></script>
+</body>
+
+</html>
